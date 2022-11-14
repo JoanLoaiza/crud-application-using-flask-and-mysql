@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  
-  <title>Phone Book</title>
-  
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/AdminLTE.min.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/_all-skins.min.css')}}">
+<!-- Incluir layout -->
+{% include 'include/layout.html' %}
 
-</head>
-
-<body class="hold-transition skin-blue layout-top-nav">
-  <div class="wrapper">
-
-    <header class="main-header">
-      <nav class="navbar navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <a href="/" class="navbar-brand"><b>Phone</b>Book</a>
-          </div>
-        </div>
-      </nav>
-    </header>
 
     <div class="content-wrapper">
       <div class="container">  
@@ -32,7 +8,7 @@
           <div class="box box-info">
             <div class="box-header with-border">
             	<center>
-            		<h3 class="box-title">Delete Phone Number</h3>
+            		<h3 class="box-title">Eliminar contacto</h3>
             	</center>
             </div>
 
@@ -40,7 +16,7 @@
             {% for row in data %}
               <div class="box-body">
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Name</label>
+                  <label class="col-sm-2 control-label">Nombre</label>
 
                   <div class="col-sm-10">
                     <input name="name" value="{{ row[1] }}" type="text" class="form-control" disabled>
@@ -48,7 +24,7 @@
                 </div>
                 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Phone Number</label>
+                  <label class="col-sm-2 control-label">Número de contacto</label>
 
                   <div class="col-sm-10">
                     <input name="phone" value="{{ row[2] }}" type="text" class="form-control" disabled>
@@ -56,7 +32,7 @@
                 </div>
                 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Address</label>
+                  <label class="col-sm-2 control-label">Dirección</label>
 
                   <div class="col-sm-10">
                     <input name="address" value="{{ row[3] }}" type="text" class="form-control" disabled>
@@ -65,8 +41,8 @@
               </div>
 
               <div class="box-footer">
-                <a href="/"><button type="button" class="btn btn-default">Cancel</button></a>
-                <input name="delete" type="submit" class="btn btn-info pull-right" value="Delete">
+                <a href="/contactos/home"><button type="button" class="btn btn-default">Cancelar</button></a>
+                <input name="delete" type="submit" class="btn btn-info pull-right" value="Eliminar">
               </div>
             {% endfor %}
             </form>

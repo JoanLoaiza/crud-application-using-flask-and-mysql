@@ -1,0 +1,77 @@
+<!-- Incluir layout -->
+{% include 'include/layout.html' %}
+
+    <div class="content-wrapper">
+      <div class="container">  
+        <section class="content">
+          <div class="box box-info">
+            <div class="box-header with-border">
+            	<center>
+            		<h3 class="box-title">Agregar nuevo contacto</h3>
+            	</center>
+            </div>
+
+            <form class="form-horizontal" method="POST" action="/addphone">
+              <div class="box-body">
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Nombre</label>
+
+                  <div class="col-sm-10">
+                    <input name="name" type="text" class="form-control" placeholder="Nombre" autocomplete="off" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Número de contacto</label>
+
+                  <div class="col-sm-10">
+                    <input name="phone" type="text" class="form-control" placeholder="Número de contacto" autocomplete="off" required>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">Dirección</label>
+
+                  <div class="col-sm-10">
+                    <input name="address" type="text" class="form-control" placeholder="Dirección" autocomplete="off" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="box-footer">
+                <a href="/contactos/home"><button type="button" class="btn btn-default">Cancelar</button></a>
+                <input name="save" type="submit" class="btn btn-info pull-right" value="Guardar">
+              </div>
+
+            </form>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 0.1
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+
+  <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+  <script>
+    $(function () {
+      $("#dataphone").DataTable();
+      
+    });
+  </script>
+
+</body>
+</html>

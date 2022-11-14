@@ -1,0 +1,48 @@
+<!-- Incluir layout -->
+{% include 'include/layout.html' %}
+
+
+    <div class="content-wrapper">
+      <div class="container">  
+        <section class="content">
+          <div class="error-page">
+            <h2 class="headline text-yellow"> 404</h2>
+
+            <div class="error-content">
+              <h3><i class="fa fa-warning text-yellow"></i> ¡Uy! Página no encontrada.</h3>
+              <p>
+                No hemos podido encontrar la página que buscaba.
+                Mientras tanto, puede volver al <a href="/"><code>inicio</code></a>
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 0.1
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+
+  <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+  <script>
+    $(function () {
+      $("#dataphone").DataTable();
+      
+    });
+  </script>
+
+</body>
+</html>
