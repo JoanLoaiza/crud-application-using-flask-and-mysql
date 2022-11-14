@@ -5,7 +5,7 @@ import re
 import json
 
 app = Flask(__name__)
-app.secret_key = "mys3cr3tk3y"
+app.secret_key = "abc123456"
 db = Database()
 
 

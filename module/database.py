@@ -72,7 +72,8 @@ class Database:
         con = Database.connect(self)
         cursor = con.cursor()
         try:
-            cursor.execute("SELECT * FROM accounts WHERE username = %s AND password = %s", (usernam, hash(password),))
+            cursor.execute(
+                "SELECT * FROM accounts WHERE username = %s AND password = %s", (usernam, hash(password),))
             return cursor.fetchone()
         except:
             return ()
